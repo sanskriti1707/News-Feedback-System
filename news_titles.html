@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Aggregation and Sentiment Analysis</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .p-4{
+          display: flex;
+          flex-direction: column;
+          height: 33vh;
+        }
+        .inline{
+          margin-top: auto
+        }
+        
+    </style>
+</head>
+<body>
+    <!-- <header class="navbar-container">
+      <header data-thq="thq-navbar" class="navbar-navbar-interactive">
+        <div data-thq="thq-navbar-nav" class="navbar-desktop-menu">
+          <nav class="navbar-links">
+            <span class="thq-link thq-body-small"><span><a href="\">Home</a></span></span>
+            <span class="thq-link thq-body-small"><span><a href="ministries.html">News</a></span></span>
+            <span class="thq-link thq-body-small">
+              <span><a href="\">About</a></span>
+            </span>
+            <span class="thq-link thq-body-small">
+              <span><a href="\">Contact Us</a></span>
+            </span>
+          </nav>
+          <div class="navbar-buttons">
+          
+          </div>
+        </div>
+        <div data-thq="thq-burger-menu" class="navbar-burger-menu">
+          <svg viewBox="0 0 1024 1024" class="navbar-icon">
+            <path
+              d="M128 554.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 298.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 810.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667z"
+            ></path>
+          </svg>
+        </div>
+        <div data-thq="thq-mobile-menu" class="navbar-mobile-menu">
+          <div class="navbar-nav">
+            <div class="navbar-top">
+            
+              <div data-thq="thq-close-menu" class="navbar-close-menu">
+                <svg viewBox="0 0 1024 1024" class="navbar-icon2">
+                  <path
+                    d="M810 274l-238 238 238 238-60 60-238-238-238 238-60-60 238-238-238-238 60-60 238 238 238-238z"
+                  ></path>
+                </svg>
+              </div>
+            </div>
+            <nav class="navbar-links1">
+              <span class="thq-link thq-body-small"><span><a href="index.html">Home</a></span></span>
+              <span class="thq-link thq-body-small"><a href="ministries.html">News</a></span>
+             
+              <span class="thq-link thq-body-small">
+                <span><a href="#abt">About</a></span>
+              </span>
+              <span class="thq-link thq-body-small">
+                <span><a href="\">Contact Us</a></span>
+              </span>
+            </nav>
+          </div>
+          <div class="navbar-buttons1">
+            <button class="thq-button-filled">Login</button>
+            <button class="thq-button-outline">Register</button>
+          </div>
+        </div>
+      </header>
+    </header> -->
+      <section class="py-16 bg-white ok">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {% for news_item in news_data%}    
+              <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                  <img src="https://placehold.co/400x200" alt="News Thumbnail" class="w-full h-48 object-cover">
+                  <div class="p-4">
+                      <div class="upper">
+                      <h2 class="text-xl font-semibold">{{news_item.title}}</h2>
+                      <p class="mt-2 text-gray-600">Brief summary of the news article...</p>
+                      </div>
+                      <div class="inline">
+                        <div class="mt-4 flex items-center justify-between">
+                          <span class="text-sm text-gray-500">Source</span>
+                          <span class="text-sm text-green-500">{{news_item.Sentiment}}</span>
+                        </div>
+                        <div class="mt-2 flex items-center justify-between">
+                          <span class="text-sm text-gray-500">Ministry</span>
+                          <a href="#" class="text-blue-500 hover:underline">Read More</a>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+              {%endfor%}
+          </div>
+      </section>
+  
+  
+      
+      
+          
+  
+      
+  </body>
+</html>
